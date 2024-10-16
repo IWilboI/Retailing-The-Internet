@@ -25,4 +25,4 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia
 THEN I am able to successfully create, update, and delete data in my database
 
-## walkthrough video [Untitled Video September 11, 2024 3_12 PM (4).webm](https://github.com/user-attachments/assets/365eaa8a-c57d-4d51-9d14-bb942693a73a)
+## walkthrough video [Untitled Video September 11, 2024 3_12 PM (4).webm](https://github.com/user-attachments/assets/365eaa8a-c57d-4d51-9d14-bb942693a73a) ##
