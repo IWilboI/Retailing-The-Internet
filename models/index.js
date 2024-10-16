@@ -1,14 +1,14 @@
-const Category = require('./category');
-const Product = require('./product');
-const Tag = require('./tag');
-const ProductTag = require('./productTag');
+const Category = require('./Category');
+const Product = require('./Product');
+const Tag = require('./Tag');
+const ProductTag = require('./ProductTag');
 
 // Associations
-Product.belongsTo(Category, {
+Category.hasMany(Product, {
   foreignKey: 'category_id',
 });
 
-Category.hasMany(Product, {
+Product.belongsTo(Category, {
   foreignKey: 'category_id',
 });
 
@@ -22,10 +22,4 @@ Tag.belongsToMany(Product, {
   foreignKey: 'tag_id',
 });
 
-module.exports = {
-  Category,
-  Product,
-  Tag,
-  ProductTag,
-};
-
+module.exports = { Category, Product, Tag, ProductTag };
