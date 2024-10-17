@@ -1,13 +1,12 @@
+const sequelize = require('../config/connection'); // Ensure this path is correct
 const seedCategories = require('./category-seeds');
 const seedProducts = require('./product-seeds');
 const seedTags = require('./tag-seeds');
-const seedProductTags = require('./product-tag-seeds');
-
-const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true }); // Drops and recreates tables
   console.log('\n----- DATABASE SYNCED -----\n');
+
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
@@ -16,9 +15,6 @@ const seedAll = async () => {
 
   await seedTags();
   console.log('\n----- TAGS SEEDED -----\n');
-
-  await seedProductTags();
-  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
 
   process.exit(0);
 };

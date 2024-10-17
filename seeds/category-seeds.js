@@ -1,23 +1,25 @@
-const { Category } = require('../models');
+const { Category } = require('../models'); // Ensure the path is correct
 
 const categoryData = [
   {
-    category_name: 'Shirts',
+    category_name: 'Electronics',
   },
   {
-    category_name: 'Shorts',
+    category_name: 'Home Appliances',
   },
   {
-    category_name: 'Music',
+    category_name: 'Clothing',
   },
   {
-    category_name: 'Hats',
+    category_name: 'Books',
   },
   {
-    category_name: 'Shoes',
+    category_name: 'Toys',
   },
 ];
 
-const seedCategories = () => Category.bulkCreate(categoryData);
+const seedCategories = async () => {
+  await Category.bulkCreate(categoryData);
+};
 
 module.exports = seedCategories;

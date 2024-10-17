@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 
-router.use('/api', apiRoutes);
+router.use('/api', apiRoutes); // Use API routes
 
+// Catch-all for unknown routes
 router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>")
+  res.status(404).send('Wrong Route!');
 });
 
 module.exports = router;
